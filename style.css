@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'VT323', monospace;
+    background-image: url(img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.snake {
+    background-color: #414141;
+}
+
+/* Responsive game board */
+#game-board {
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr); /* Use flexible units */
+    grid-template-rows: repeat(20, 1fr); /* Use flexible units */
+    width: 90vw; /* Set a responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    height: 90vw; /* Set height to maintain square aspect ratio */
+    max-height: 400px; /* Max height for larger screens */
+    margin: 5px;
+}
+
+/* Responsive borders */
+.game-border-1 {
+    border: #595f43 solid 10px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px #595f43; /* inset shadow */
+}
+
+.game-border-2 {
+    border: #abb78a solid 8px;
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 10px #abb78a;
+}
+
+.game-border-3 {
+    border: #8b966c solid 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px #8b966c;
+}
+
+#instruction-text {
+    position: absolute;
+    top: 62%;
+    color: #333;
+    width: 80vw; /* Use responsive width */
+    max-width: 300px; /* Max width for larger screens */
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px; /* Reduced padding for smaller screens */
+    margin: 0;
+    font-size: 18px; /* Default font size */
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Responsive width */
+    margin: 10px 0;
+}
+
+#score {
+    color: #abb78a;
+}
+
+#score, #highScore {
+    font-size: 30px; /* Default font size */
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+#highScore {
+    color: #d8ddca;
+    display: none;
+}
+
+.game-border-3, #logo {
+    background-color: #c4cfa3;
+}
+
+.snake {
+    border: #5a5a5a 1px dotted;
+}
+
+#logo {
+    height: 12vw; /* Use responsive height */
+    max-height: 200px; /* Max height for larger screens */
+    position: absolute;
+}
+
+.food {
+    background-color: #dedede;
+    border: #999 5px solid;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #instruction-text {
+        font-size: 16px; /* Smaller font size on narrow screens */
+    }
+
+    #score, #highScore {
+        font-size: 24px; /* Smaller score font size */
+    }
+}
